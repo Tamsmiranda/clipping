@@ -1,0 +1,1087 @@
+# LANGUAGE translation of CakePHP Application
+# Copyright YEAR NAME <EMAIL@ADDRESS>
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PROJECT VERSION\n"
+"POT-Creation-Date: 2011-09-08 15:20+0000\n"
+"PO-Revision-Date: YYYY-mm-DD HH:MM+ZZZZ\n"
+"Last-Translator: NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <EMAIL@ADDRESS>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
+
+#: \controllers\clipps_controller.php:13;43;88;118
+msgid "Invalid clipp"
+msgstr ""
+
+#: \controllers\clipps_controller.php:23;48;98;123
+msgid "The clipp has been saved"
+msgstr ""
+
+#: \controllers\clipps_controller.php:26;51;101;126
+msgid "The clipp could not be saved. Please, try again."
+msgstr ""
+
+#: \controllers\clipps_controller.php:71;146
+msgid "Invalid id for clipp"
+msgstr ""
+
+#: \controllers\clipps_controller.php:75;150
+msgid "Clipp deleted"
+msgstr ""
+
+#: \controllers\clipps_controller.php:78;153
+msgid "Clipp was not deleted"
+msgstr ""
+
+#: \controllers\customers_controller.php:13;33;68;88
+msgid "Invalid customer"
+msgstr ""
+
+#: \controllers\customers_controller.php:23;38;78;93
+msgid "The customer has been saved"
+msgstr ""
+
+#: \controllers\customers_controller.php:26;41;81;96
+msgid "The customer could not be saved. Please, try again."
+msgstr ""
+
+#: \controllers\customers_controller.php:51;106
+msgid "Invalid id for customer"
+msgstr ""
+
+#: \controllers\customers_controller.php:55;110
+msgid "Customer deleted"
+msgstr ""
+
+#: \controllers\customers_controller.php:58;113
+msgid "Customer was not deleted"
+msgstr ""
+
+#: \controllers\evaluations_controller.php:13;33;68;88
+msgid "Invalid evaluation"
+msgstr ""
+
+#: \controllers\evaluations_controller.php:23;38;78;93
+msgid "The evaluation has been saved"
+msgstr ""
+
+#: \controllers\evaluations_controller.php:26;41;81;96
+msgid "The evaluation could not be saved. Please, try again."
+msgstr ""
+
+#: \controllers\evaluations_controller.php:51;106
+msgid "Invalid id for evaluation"
+msgstr ""
+
+#: \controllers\evaluations_controller.php:55;110
+msgid "Evaluation deleted"
+msgstr ""
+
+#: \controllers\evaluations_controller.php:58;113
+msgid "Evaluation was not deleted"
+msgstr ""
+
+#: \controllers\publisher_types_controller.php:15;30
+msgid "The publisher type has been saved"
+msgstr ""
+
+#: \controllers\publisher_types_controller.php:18;33
+msgid "The publisher type could not be saved. Please, try again."
+msgstr ""
+
+#: \controllers\publisher_types_controller.php:25
+msgid "Invalid publisher type"
+msgstr ""
+
+#: \controllers\publisher_types_controller.php:43
+msgid "Invalid id for publisher type"
+msgstr ""
+
+#: \controllers\publisher_types_controller.php:47
+msgid "Publisher type deleted"
+msgstr ""
+
+#: \controllers\publisher_types_controller.php:50
+msgid "Publisher type was not deleted"
+msgstr ""
+
+#: \controllers\publishers_controller.php:15;35
+msgid "The publisher has been saved"
+msgstr ""
+
+#: \controllers\publishers_controller.php:18;38
+msgid "The publisher could not be saved. Please, try again."
+msgstr ""
+
+#: \controllers\publishers_controller.php:30
+msgid "Invalid publisher"
+msgstr ""
+
+#: \controllers\publishers_controller.php:53
+msgid "Invalid id for publisher"
+msgstr ""
+
+#: \controllers\publishers_controller.php:57
+msgid "Publisher deleted"
+msgstr ""
+
+#: \controllers\publishers_controller.php:60
+msgid "Publisher was not deleted"
+msgstr ""
+
+#: \controllers\sections_controller.php:14;31
+msgid "The section has been saved"
+msgstr ""
+
+#: \controllers\sections_controller.php:17;34
+msgid "The section could not be saved. Please, try again."
+msgstr ""
+
+#: \controllers\sections_controller.php:26
+msgid "Invalid section"
+msgstr ""
+
+#: \controllers\sections_controller.php:46
+msgid "Invalid id for section"
+msgstr ""
+
+#: \controllers\sections_controller.php:50
+msgid "Section deleted"
+msgstr ""
+
+#: \controllers\sections_controller.php:53
+msgid "Section was not deleted"
+msgstr ""
+
+#: \controllers\statuses_controller.php:80;95
+msgid "The status has been saved"
+msgstr ""
+
+#: \controllers\statuses_controller.php:83;98
+msgid "The status could not be saved. Please, try again."
+msgstr ""
+
+#: \controllers\statuses_controller.php:90
+msgid "Invalid status"
+msgstr ""
+
+#: \controllers\statuses_controller.php:108
+msgid "Invalid id for status"
+msgstr ""
+
+#: \controllers\statuses_controller.php:112
+msgid "Status deleted"
+msgstr ""
+
+#: \controllers\statuses_controller.php:115
+msgid "Status was not deleted"
+msgstr ""
+
+#: \controllers\storages_controller.php:13;37
+msgid "Invalid storage"
+msgstr ""
+
+#: \controllers\storages_controller.php:23;42
+msgid "The storage has been saved"
+msgstr ""
+
+#: \controllers\storages_controller.php:26;45
+msgid "The storage could not be saved. Please, try again."
+msgstr ""
+
+#: \controllers\storages_controller.php:59
+msgid "Invalid id for storage"
+msgstr ""
+
+#: \controllers\storages_controller.php:63
+msgid "Storage deleted"
+msgstr ""
+
+#: \controllers\storages_controller.php:66
+msgid "Storage was not deleted"
+msgstr ""
+
+#: \controllers\subjects_controller.php:15;30
+msgid "The subject has been saved"
+msgstr ""
+
+#: \controllers\subjects_controller.php:18;33
+msgid "The subject could not be saved. Please, try again."
+msgstr ""
+
+#: \controllers\subjects_controller.php:25
+msgid "Invalid subject"
+msgstr ""
+
+#: \controllers\subjects_controller.php:43
+msgid "Invalid id for subject"
+msgstr ""
+
+#: \controllers\subjects_controller.php:47
+msgid "Subject deleted"
+msgstr ""
+
+#: \controllers\subjects_controller.php:50
+msgid "Subject was not deleted"
+msgstr ""
+
+#: \views\blocks\add.ctp:4
+msgid "Add Block"
+msgstr ""
+
+#: \views\blocks\add.ctp:21
+#: \views\blocks\edit.ctp:22
+#: \views\clipps\add.ctp:19
+#: \views\clipps\admin_add.ctp:45
+#: \views\clipps\admin_edit.ctp:45
+#: \views\clipps\edit.ctp:20
+#: \views\customers\add.ctp:8
+#: \views\customers\admin_add.ctp:8
+#: \views\customers\admin_edit.ctp:9
+#: \views\customers\edit.ctp:9
+#: \views\evaluations\admin_add.ctp:15
+#: \views\evaluations\admin_edit.ctp:15
+#: \views\publisher_types\admin_add.ctp:15
+#: \views\publisher_types\admin_edit.ctp:15
+#: \views\publishers\admin_add.ctp:19
+#: \views\publishers\admin_edit.ctp:19
+#: \views\sections\admin_add.ctp:16
+#: \views\sections\admin_edit.ctp:16
+#: \views\statuses\admin_add.ctp:17
+#: \views\statuses\admin_edit.ctp:17
+#: \views\storages\add.ctp:17
+#: \views\storages\edit.ctp:18
+#: \views\subjects\admin_add.ctp:15
+#: \views\subjects\admin_edit.ctp:15
+msgid "Submit"
+msgstr ""
+
+#: \views\blocks\add.ctp:24
+#: \views\blocks\edit.ctp:25
+#: \views\blocks\index.ctp:21;73
+#: \views\blocks\view.ctp:87
+#: \views\clipps\add.ctp:22
+#: \views\clipps\admin_index.ctp:35
+#: \views\clipps\admin_view.ctp:87
+#: \views\clipps\edit.ctp:23
+#: \views\clipps\view.ctp:87
+#: \views\customers\add.ctp:11
+#: \views\customers\admin_add.ctp:11
+#: \views\customers\admin_edit.ctp:12
+#: \views\customers\admin_index.ctp:6;41
+#: \views\customers\admin_view.ctp:12;43
+#: \views\customers\edit.ctp:12
+#: \views\customers\index.ctp:6;41
+#: \views\customers\view.ctp:12;43
+#: \views\evaluations\admin_index.ctp:12
+#: \views\publisher_types\admin_index.ctp:12
+#: \views\publishers\admin_index.ctp:19
+#: \views\publishers\admin_view.ctp:47;82;137
+#: \views\sections\admin_index.ctp:16
+#: \views\statuses\admin_index.ctp:13
+#: \views\storages\add.ctp:20
+#: \views\storages\edit.ctp:21
+#: \views\storages\index.ctp:17;69
+#: \views\storages\view.ctp:67
+#: \views\subjects\admin_index.ctp:12
+msgid "Actions"
+msgstr ""
+
+#: \views\blocks\add.ctp:27
+#: \views\blocks\edit.ctp:29
+#: \views\blocks\view.ctp:91
+msgid "List Blocks"
+msgstr ""
+
+#: \views\blocks\add.ctp:28
+#: \views\blocks\edit.ctp:30
+#: \views\blocks\index.ctp:76
+#: \views\blocks\view.ctp:93
+msgid "List Regions"
+msgstr ""
+
+#: \views\blocks\add.ctp:29
+#: \views\blocks\edit.ctp:31
+#: \views\blocks\index.ctp:77
+#: \views\blocks\view.ctp:94
+msgid "New Region"
+msgstr ""
+
+#: \views\blocks\edit.ctp:4
+#: \views\blocks\view.ctp:89
+msgid "Edit Block"
+msgstr ""
+
+#: \views\blocks\edit.ctp:28
+#: \views\blocks\index.ctp:53
+#: \views\clipps\admin_index.ctp:66
+#: \views\clipps\edit.ctp:25
+#: \views\customers\admin_edit.ctp:15
+#: \views\customers\admin_index.ctp:21
+#: \views\customers\admin_view.ctp:73
+#: \views\customers\edit.ctp:15
+#: \views\customers\index.ctp:21
+#: \views\customers\view.ctp:73
+#: \views\evaluations\admin_index.ctp:28
+#: \views\publisher_types\admin_index.ctp:27
+#: \views\publishers\admin_index.ctp:41
+#: \views\publishers\admin_view.ctp:112;157
+#: \views\sections\admin_index.ctp:35
+#: \views\statuses\admin_index.ctp:28
+#: \views\storages\edit.ctp:24
+#: \views\storages\index.ctp:49
+#: \views\subjects\admin_index.ctp:27
+msgid "Delete"
+msgstr ""
+
+#: \views\blocks\edit.ctp:28
+#: \views\blocks\index.ctp:53
+#: \views\blocks\view.ctp:90
+#: \views\clipps\admin_index.ctp:66
+#: \views\clipps\admin_view.ctp:90
+#: \views\clipps\edit.ctp:25
+#: \views\clipps\view.ctp:90
+#: \views\customers\admin_edit.ctp:15
+#: \views\customers\admin_index.ctp:21
+#: \views\customers\admin_view.ctp:15;73
+#: \views\customers\edit.ctp:15
+#: \views\customers\index.ctp:21
+#: \views\customers\view.ctp:15;73
+#: \views\evaluations\admin_index.ctp:28
+#: \views\publisher_types\admin_index.ctp:27
+#: \views\publishers\admin_index.ctp:41
+#: \views\publishers\admin_view.ctp:50;112;157
+#: \views\sections\admin_index.ctp:35
+#: \views\statuses\admin_index.ctp:28
+#: \views\storages\edit.ctp:24
+#: \views\storages\index.ctp:49
+#: \views\storages\view.ctp:70
+#: \views\subjects\admin_index.ctp:27
+msgid "Are you sure you want to delete # %s?"
+msgstr ""
+
+#: \views\blocks\index.ctp:2
+msgid "Blocks"
+msgstr ""
+
+#: \views\blocks\index.ctp:51
+#: \views\clipps\admin_index.ctp:64
+#: \views\customers\admin_index.ctp:19
+#: \views\customers\admin_view.ctp:71
+#: \views\customers\index.ctp:19
+#: \views\customers\view.ctp:71
+#: \views\evaluations\admin_index.ctp:26
+#: \views\publishers\admin_view.ctp:110
+#: \views\storages\index.ctp:47
+msgid "View"
+msgstr ""
+
+#: \views\blocks\index.ctp:52
+#: \views\clipps\admin_index.ctp:65
+#: \views\customers\admin_index.ctp:20
+#: \views\customers\admin_view.ctp:72
+#: \views\customers\index.ctp:20
+#: \views\customers\view.ctp:72
+#: \views\evaluations\admin_index.ctp:27
+#: \views\publisher_types\admin_index.ctp:26
+#: \views\publishers\admin_index.ctp:40
+#: \views\publishers\admin_view.ctp:111;156
+#: \views\sections\admin_index.ctp:34
+#: \views\statuses\admin_index.ctp:27
+#: \views\storages\index.ctp:48
+#: \views\subjects\admin_index.ctp:26
+msgid "Edit"
+msgstr ""
+
+#: \views\blocks\index.ctp:61
+#: \views\clipps\admin_index.ctp:72
+#: \views\clipps\index.ctp:62
+#: \views\customers\admin_index.ctp:29
+#: \views\customers\index.ctp:29
+#: \views\evaluations\admin_index.ctp:34
+#: \views\publisher_types\admin_index.ctp:33
+#: \views\publishers\admin_index.ctp:47
+#: \views\sections\admin_index.ctp:41
+#: \views\statuses\admin_index.ctp:34
+#: \views\storages\index.ctp:57
+#: \views\subjects\admin_index.ctp:33
+msgid "Page %page% of %pages%, showing %current% records out of %count% total, starting on record %start%, ending on %end%"
+msgstr ""
+
+#: \views\blocks\index.ctp:66
+#: \views\clipps\index.ctp:67
+#: \views\customers\admin_index.ctp:34
+#: \views\customers\index.ctp:34
+#: \views\storages\index.ctp:62
+msgid "previous"
+msgstr ""
+
+#: \views\blocks\index.ctp:69
+#: \views\clipps\index.ctp:70
+#: \views\customers\admin_index.ctp:37
+#: \views\customers\index.ctp:37
+#: \views\storages\index.ctp:65
+msgid "next"
+msgstr ""
+
+#: \views\blocks\index.ctp:75
+#: \views\blocks\view.ctp:92
+msgid "New Block"
+msgstr ""
+
+#: \views\blocks\view.ctp:2
+msgid "Block"
+msgstr ""
+
+#: \views\blocks\view.ctp:4
+#: \views\clipps\admin_view.ctp:4
+#: \views\clipps\view.ctp:4
+#: \views\customers\admin_view.ctp:4;27
+#: \views\customers\view.ctp:4;27
+#: \views\publishers\admin_view.ctp:4;66;130
+#: \views\storages\view.ctp:4
+msgid "Id"
+msgstr ""
+
+#: \views\blocks\view.ctp:9
+msgid "Region"
+msgstr ""
+
+#: \views\blocks\view.ctp:14
+#: \views\clipps\admin_view.ctp:9
+#: \views\clipps\view.ctp:9
+#: \views\customers\admin_view.ctp:28
+#: \views\customers\view.ctp:28
+#: \views\publishers\admin_view.ctp:67
+msgid "Title"
+msgstr ""
+
+#: \views\blocks\view.ctp:19
+msgid "Alias"
+msgstr ""
+
+#: \views\blocks\view.ctp:24
+msgid "Body"
+msgstr ""
+
+#: \views\blocks\view.ctp:29
+msgid "Show Title"
+msgstr ""
+
+#: \views\blocks\view.ctp:34
+msgid "Class"
+msgstr ""
+
+#: \views\blocks\view.ctp:39
+#: \views\clipps\admin_view.ctp:34
+#: \views\clipps\index.ctp:46
+#: \views\clipps\view.ctp:34
+#: \views\elements\admin_menu.ctp:5
+msgid "Status"
+msgstr ""
+
+#: \views\blocks\view.ctp:44
+msgid "Weight"
+msgstr ""
+
+#: \views\blocks\view.ctp:49
+msgid "Element"
+msgstr ""
+
+#: \views\blocks\view.ctp:54
+msgid "Visibility Roles"
+msgstr ""
+
+#: \views\blocks\view.ctp:59
+msgid "Visibility Paths"
+msgstr ""
+
+#: \views\blocks\view.ctp:64
+msgid "Visibility Php"
+msgstr ""
+
+#: \views\blocks\view.ctp:69
+msgid "Params"
+msgstr ""
+
+#: \views\blocks\view.ctp:74
+msgid "Updated"
+msgstr ""
+
+#: \views\blocks\view.ctp:79
+#: \views\clipps\admin_view.ctp:39
+#: \views\clipps\view.ctp:39
+#: \views\customers\admin_view.ctp:34
+#: \views\customers\view.ctp:34
+#: \views\publishers\admin_view.ctp:34;73;135
+#: \views\storages\view.ctp:39
+msgid "Created"
+msgstr ""
+
+#: \views\blocks\view.ctp:90
+msgid "Delete Block"
+msgstr ""
+
+#: \views\clipps\add.ctp:4
+#: \views\clipps\admin_add.ctp:2
+msgid "Add Clipp"
+msgstr ""
+
+#: \views\clipps\add.ctp:10;11;12;13;14;15;16
+#: \views\clipps\edit.ctp:11;12;13;14;15;16;17
+msgid "Select"
+msgstr ""
+
+#: \views\clipps\add.ctp:24
+#: \views\clipps\admin_add.ctp:5
+#: \views\clipps\admin_edit.ctp:5
+#: \views\clipps\admin_view.ctp:91
+#: \views\clipps\edit.ctp:26
+#: \views\clipps\view.ctp:91
+#: \views\customers\add.ctp:15
+#: \views\customers\admin_add.ctp:15
+#: \views\customers\admin_edit.ctp:17
+#: \views\customers\admin_index.ctp:44
+#: \views\customers\admin_view.ctp:18
+#: \views\customers\edit.ctp:17
+#: \views\customers\index.ctp:44
+#: \views\customers\view.ctp:18
+#: \views\publishers\admin_view.ctp:55
+#: \views\statuses\admin_add.ctp:6
+#: \views\statuses\admin_edit.ctp:6
+#: \views\statuses\admin_index.ctp:6
+#: \views\storages\add.ctp:23
+#: \views\storages\edit.ctp:26
+#: \views\storages\index.ctp:72
+#: \views\storages\view.ctp:73
+msgid "List Clipps"
+msgstr ""
+
+#: \views\clipps\add.ctp:25
+#: \views\clipps\admin_view.ctp:93
+#: \views\clipps\edit.ctp:27
+#: \views\clipps\view.ctp:93
+#: \views\evaluations\admin_add.ctp:5
+#: \views\evaluations\admin_edit.ctp:5
+msgid "List Evaluations"
+msgstr ""
+
+#: \views\clipps\add.ctp:26
+#: \views\clipps\admin_view.ctp:94
+#: \views\clipps\edit.ctp:28
+#: \views\clipps\view.ctp:94
+#: \views\evaluations\admin_index.ctp:5
+msgid "New Evaluation"
+msgstr ""
+
+#: \views\clipps\add.ctp:27
+#: \views\clipps\admin_view.ctp:95
+#: \views\clipps\edit.ctp:29
+#: \views\clipps\view.ctp:95
+#: \views\statuses\admin_add.ctp:5
+#: \views\statuses\admin_edit.ctp:5
+msgid "List Statuses"
+msgstr ""
+
+#: \views\clipps\add.ctp:28
+#: \views\clipps\admin_view.ctp:96
+#: \views\clipps\edit.ctp:30
+#: \views\clipps\view.ctp:96
+#: \views\statuses\admin_index.ctp:5
+msgid "New Status"
+msgstr ""
+
+#: \views\clipps\add.ctp:29
+#: \views\clipps\admin_view.ctp:97
+#: \views\clipps\edit.ctp:31
+#: \views\clipps\view.ctp:97
+#: \views\customers\add.ctp:14
+#: \views\customers\admin_add.ctp:14
+#: \views\customers\admin_edit.ctp:16
+#: \views\customers\admin_view.ctp:16
+#: \views\customers\edit.ctp:16
+#: \views\customers\view.ctp:16
+msgid "List Customers"
+msgstr ""
+
+#: \views\clipps\add.ctp:30
+#: \views\clipps\admin_view.ctp:98
+#: \views\clipps\edit.ctp:32
+#: \views\clipps\view.ctp:98
+#: \views\customers\admin_index.ctp:43
+#: \views\customers\admin_view.ctp:17
+#: \views\customers\index.ctp:43
+#: \views\customers\view.ctp:17
+msgid "New Customer"
+msgstr ""
+
+#: \views\clipps\add.ctp:31
+#: \views\clipps\admin_view.ctp:99
+#: \views\clipps\edit.ctp:33
+#: \views\clipps\view.ctp:99
+#: \views\publisher_types\admin_add.ctp:5
+#: \views\publisher_types\admin_edit.ctp:5
+#: \views\publishers\admin_add.ctp:6
+#: \views\publishers\admin_edit.ctp:6
+#: \views\publishers\admin_index.ctp:6
+#: \views\publishers\admin_view.ctp:53
+msgid "List Publisher Types"
+msgstr ""
+
+#: \views\clipps\add.ctp:32
+#: \views\clipps\admin_view.ctp:100
+#: \views\clipps\edit.ctp:34
+#: \views\clipps\view.ctp:100
+#: \views\publisher_types\admin_index.ctp:5
+#: \views\publishers\admin_view.ctp:54
+msgid "New Publisher Type"
+msgstr ""
+
+#: \views\clipps\add.ctp:33
+#: \views\clipps\admin_view.ctp:101
+#: \views\clipps\edit.ctp:35
+#: \views\clipps\view.ctp:101
+#: \views\publishers\admin_add.ctp:5
+#: \views\publishers\admin_edit.ctp:5
+#: \views\publishers\admin_view.ctp:51
+msgid "List Publishers"
+msgstr ""
+
+#: \views\clipps\add.ctp:34
+#: \views\clipps\admin_view.ctp:102
+#: \views\clipps\edit.ctp:36
+#: \views\clipps\view.ctp:102
+#: \views\publishers\admin_index.ctp:5
+#: \views\publishers\admin_view.ctp:52
+msgid "New Publisher"
+msgstr ""
+
+#: \views\clipps\add.ctp:35
+#: \views\clipps\admin_view.ctp:103
+#: \views\clipps\edit.ctp:37
+#: \views\clipps\view.ctp:103
+#: \views\publishers\admin_add.ctp:7
+#: \views\publishers\admin_edit.ctp:7
+#: \views\publishers\admin_index.ctp:7
+#: \views\publishers\admin_view.ctp:57
+#: \views\sections\admin_add.ctp:5
+#: \views\sections\admin_edit.ctp:5
+msgid "List Sections"
+msgstr ""
+
+#: \views\clipps\add.ctp:36
+#: \views\clipps\admin_view.ctp:104
+#: \views\clipps\edit.ctp:38
+#: \views\clipps\view.ctp:104
+#: \views\publishers\admin_view.ctp:58;166
+#: \views\sections\admin_index.ctp:5
+msgid "New Section"
+msgstr ""
+
+#: \views\clipps\add.ctp:37
+#: \views\clipps\admin_view.ctp:105
+#: \views\clipps\edit.ctp:39
+#: \views\clipps\view.ctp:105
+#: \views\subjects\admin_add.ctp:5
+#: \views\subjects\admin_edit.ctp:5
+msgid "List Subjects"
+msgstr ""
+
+#: \views\clipps\add.ctp:38
+#: \views\clipps\admin_view.ctp:106
+#: \views\clipps\edit.ctp:40
+#: \views\clipps\view.ctp:106
+#: \views\subjects\admin_index.ctp:5
+msgid "New Subject"
+msgstr ""
+
+#: \views\clipps\admin_add.ctp:13
+#: \views\clipps\admin_edit.ctp:13
+#: \views\clipps\admin_view.ctp:2
+#: \views\clipps\view.ctp:2
+#: \views\storages\view.ctp:59
+msgid "Clipp"
+msgstr ""
+
+#: \views\clipps\admin_add.ctp:14
+#: \views\clipps\admin_edit.ctp:14
+#: \views\clipps\admin_view.ctp:24
+#: \views\clipps\view.ctp:24
+#: \views\customers\admin_view.ctp:31
+#: \views\customers\view.ctp:31
+#: \views\publishers\admin_view.ctp:70
+msgid "Content"
+msgstr ""
+
+#: \views\clipps\admin_add.ctp:15
+#: \views\clipps\admin_edit.ctp:15
+#: \views\clipps\admin_view.ctp:69
+#: \views\clipps\index.ctp:49
+#: \views\clipps\view.ctp:69
+#: \views\publishers\admin_view.ctp:2
+msgid "Publisher"
+msgstr ""
+
+#: \views\clipps\admin_add.ctp:16
+#: \views\clipps\admin_edit.ctp:16
+msgid "Files"
+msgstr ""
+
+#: \views\clipps\admin_edit.ctp:2
+#: \views\clipps\admin_view.ctp:89
+#: \views\clipps\edit.ctp:4
+#: \views\clipps\view.ctp:89
+msgid "Edit Clipp"
+msgstr ""
+
+#: \views\clipps\admin_index.ctp:2
+#: \views\clipps\index.ctp:2
+#: \views\elements\admin_menu.ctp:3
+msgid "Clipps"
+msgstr ""
+
+#: \views\clipps\admin_index.ctp:5
+#: \views\clipps\admin_view.ctp:92
+#: \views\clipps\view.ctp:92
+#: \views\customers\add.ctp:16
+#: \views\customers\admin_add.ctp:16
+#: \views\customers\admin_edit.ctp:18
+#: \views\customers\admin_index.ctp:45
+#: \views\customers\admin_view.ctp:19;82
+#: \views\customers\edit.ctp:18
+#: \views\customers\index.ctp:45
+#: \views\customers\view.ctp:19;82
+#: \views\publishers\admin_view.ctp:56;121
+#: \views\storages\add.ctp:24
+#: \views\storages\edit.ctp:27
+#: \views\storages\index.ctp:73
+#: \views\storages\view.ctp:74
+msgid "New Clipp"
+msgstr ""
+
+#: \views\clipps\admin_view.ctp:14
+#: \views\clipps\view.ctp:14
+#: \views\customers\admin_view.ctp:29
+#: \views\customers\view.ctp:29
+#: \views\publishers\admin_view.ctp:68
+msgid "Publish Date"
+msgstr ""
+
+#: \views\clipps\admin_view.ctp:19
+#: \views\clipps\view.ctp:19
+#: \views\customers\admin_view.ctp:30
+#: \views\customers\view.ctp:30
+#: \views\publishers\admin_view.ctp:69
+msgid "Resume"
+msgstr ""
+
+#: \views\clipps\admin_view.ctp:29
+#: \views\clipps\view.ctp:29
+msgid "Evaluation"
+msgstr ""
+
+#: \views\clipps\admin_view.ctp:44
+#: \views\clipps\view.ctp:44
+#: \views\customers\admin_view.ctp:35
+#: \views\customers\view.ctp:35
+#: \views\publishers\admin_view.ctp:39;74;136
+#: \views\storages\view.ctp:44
+msgid "Modified"
+msgstr ""
+
+#: \views\clipps\admin_view.ctp:49
+#: \views\clipps\view.ctp:49
+#: \views\customers\admin_view.ctp:36
+#: \views\customers\view.ctp:36
+#: \views\publishers\admin_view.ctp:24;75;133
+#: \views\storages\view.ctp:49
+msgid "Created By"
+msgstr ""
+
+#: \views\clipps\admin_view.ctp:54
+#: \views\clipps\view.ctp:54
+#: \views\customers\admin_view.ctp:37
+#: \views\customers\view.ctp:37
+#: \views\publishers\admin_view.ctp:29;76;134
+#: \views\storages\view.ctp:54
+msgid "Modified By"
+msgstr ""
+
+#: \views\clipps\admin_view.ctp:59
+#: \views\clipps\index.ctp:48
+#: \views\clipps\view.ctp:59
+#: \views\customers\admin_view.ctp:2
+#: \views\customers\view.ctp:2
+msgid "Customer"
+msgstr ""
+
+#: \views\clipps\admin_view.ctp:64
+#: \views\clipps\index.ctp:47
+#: \views\clipps\view.ctp:64
+#: \views\publishers\admin_view.ctp:19
+msgid "Publisher Type"
+msgstr ""
+
+#: \views\clipps\admin_view.ctp:74
+#: \views\clipps\index.ctp:50
+#: \views\clipps\view.ctp:74
+msgid "Section"
+msgstr ""
+
+#: \views\clipps\admin_view.ctp:79
+#: \views\clipps\index.ctp:51
+#: \views\clipps\view.ctp:79
+msgid "Subject"
+msgstr ""
+
+#: \views\clipps\admin_view.ctp:90
+#: \views\clipps\view.ctp:90
+msgid "Delete Clipp"
+msgstr ""
+
+#: \views\clipps\admin_view.ctp:107
+#: \views\storages\add.ctp:25
+#: \views\storages\edit.ctp:28
+#: \views\storages\index.ctp:74
+#: \views\storages\view.ctp:75
+msgid "List Users"
+msgstr ""
+
+#: \views\clipps\admin_view.ctp:108
+#: \views\storages\add.ctp:26
+#: \views\storages\edit.ctp:29
+#: \views\storages\index.ctp:75
+#: \views\storages\view.ctp:76
+msgid "New Created By"
+msgstr ""
+
+#: \views\clipps\index.ctp:45
+msgid "Avaluation"
+msgstr ""
+
+#: \views\customers\add.ctp:4
+msgid "Add Customer"
+msgstr ""
+
+#: \views\customers\admin_add.ctp:4
+msgid "Admin Add Customer"
+msgstr ""
+
+#: \views\customers\admin_edit.ctp:4
+msgid "Admin Edit Customer"
+msgstr ""
+
+#: \views\customers\admin_index.ctp:2
+#: \views\customers\index.ctp:2
+#: \views\elements\admin_menu.ctp:4
+msgid "Customers"
+msgstr ""
+
+#: \views\customers\admin_view.ctp:14
+#: \views\customers\edit.ctp:4
+#: \views\customers\view.ctp:14
+msgid "Edit Customer"
+msgstr ""
+
+#: \views\customers\admin_view.ctp:15
+#: \views\customers\view.ctp:15
+msgid "Delete Customer"
+msgstr ""
+
+#: \views\customers\admin_view.ctp:23
+#: \views\customers\view.ctp:23
+#: \views\publishers\admin_view.ctp:62
+msgid "Related Clipps"
+msgstr ""
+
+#: \views\customers\admin_view.ctp:32
+#: \views\customers\view.ctp:32
+#: \views\publishers\admin_view.ctp:71
+msgid "Evaluation Id"
+msgstr ""
+
+#: \views\customers\admin_view.ctp:33
+#: \views\customers\view.ctp:33
+#: \views\publishers\admin_view.ctp:72
+msgid "Status Id"
+msgstr ""
+
+#: \views\customers\admin_view.ctp:38
+#: \views\customers\view.ctp:38
+#: \views\publishers\admin_view.ctp:77
+msgid "Customer Id"
+msgstr ""
+
+#: \views\customers\admin_view.ctp:39
+#: \views\customers\view.ctp:39
+#: \views\publishers\admin_view.ctp:78
+msgid "Publisher Type Id"
+msgstr ""
+
+#: \views\customers\admin_view.ctp:40
+#: \views\customers\view.ctp:40
+#: \views\publishers\admin_view.ctp:79
+msgid "Publisher Id"
+msgstr ""
+
+#: \views\customers\admin_view.ctp:41
+#: \views\customers\view.ctp:41
+#: \views\publishers\admin_view.ctp:80
+msgid "Section Id"
+msgstr ""
+
+#: \views\customers\admin_view.ctp:42
+#: \views\customers\view.ctp:42
+#: \views\publishers\admin_view.ctp:81
+msgid "Subject Id"
+msgstr ""
+
+#: \views\elements\admin_menu.ctp:1
+msgid "Clipping"
+msgstr ""
+
+#: \views\elements\admin_menu.ctp:6
+#: \views\evaluations\admin_index.ctp:2
+msgid "Evaluations"
+msgstr ""
+
+#: \views\elements\admin_menu.ctp:7
+#: \views\publishers\admin_index.ctp:2
+msgid "Publishers"
+msgstr ""
+
+#: \views\elements\admin_menu.ctp:8
+#: \views\sections\admin_index.ctp:2
+msgid "Sections"
+msgstr ""
+
+#: \views\elements\admin_menu.ctp:9
+#: \views\subjects\admin_index.ctp:2
+msgid "Subjects"
+msgstr ""
+
+#: \views\evaluations\admin_add.ctp:2
+msgid "Add Evaluation"
+msgstr ""
+
+#: \views\evaluations\admin_edit.ctp:2
+msgid "Edit Evaluation"
+msgstr ""
+
+#: \views\publisher_types\admin_add.ctp:2
+msgid "Add Publisher Type"
+msgstr ""
+
+#: \views\publisher_types\admin_edit.ctp:2
+msgid "Edit Publisher Type"
+msgstr ""
+
+#: \views\publisher_types\admin_index.ctp:2
+msgid "Publisher Types"
+msgstr ""
+
+#: \views\publishers\admin_add.ctp:2
+msgid "Add Publisher"
+msgstr ""
+
+#: \views\publishers\admin_edit.ctp:2
+#: \views\publishers\admin_view.ctp:49
+msgid "Edit Publisher"
+msgstr ""
+
+#: \views\publishers\admin_view.ctp:9;131
+#: \views\storages\view.ctp:9
+msgid "Name"
+msgstr ""
+
+#: \views\publishers\admin_view.ctp:14;132
+#: \views\storages\view.ctp:14
+msgid "Description"
+msgstr ""
+
+#: \views\publishers\admin_view.ctp:50
+msgid "Delete Publisher"
+msgstr ""
+
+#: \views\publishers\admin_view.ctp:126
+msgid "Related Sections"
+msgstr ""
+
+#: \views\sections\admin_add.ctp:2
+#: \views\sections\admin_edit.ctp:2
+msgid "Add Section"
+msgstr ""
+
+#: \views\statuses\admin_add.ctp:2
+msgid "Add Status"
+msgstr ""
+
+#: \views\statuses\admin_edit.ctp:2
+msgid "Edit Status"
+msgstr ""
+
+#: \views\statuses\admin_index.ctp:2
+msgid "Statuses"
+msgstr ""
+
+#: \views\storages\add.ctp:4
+msgid "Add Storage"
+msgstr ""
+
+#: \views\storages\add.ctp:22
+#: \views\storages\edit.ctp:25
+#: \views\storages\view.ctp:71
+msgid "List Storages"
+msgstr ""
+
+#: \views\storages\edit.ctp:4
+#: \views\storages\view.ctp:69
+msgid "Edit Storage"
+msgstr ""
+
+#: \views\storages\index.ctp:2
+msgid "Storages"
+msgstr ""
+
+#: \views\storages\index.ctp:71
+#: \views\storages\view.ctp:72
+msgid "New Storage"
+msgstr ""
+
+#: \views\storages\view.ctp:2
+msgid "Storage"
+msgstr ""
+
+#: \views\storages\view.ctp:19
+msgid "File"
+msgstr ""
+
+#: \views\storages\view.ctp:24
+msgid "Dir"
+msgstr ""
+
+#: \views\storages\view.ctp:29
+msgid "Mimetype"
+msgstr ""
+
+#: \views\storages\view.ctp:34
+msgid "Filesize"
+msgstr ""
+
+#: \views\storages\view.ctp:70
+msgid "Delete Storage"
+msgstr ""
+
+#: \views\subjects\admin_add.ctp:2
+msgid "Add Subject"
+msgstr ""
+
+#: \views\subjects\admin_edit.ctp:2
+msgid "Edit Subject"
+msgstr ""
+

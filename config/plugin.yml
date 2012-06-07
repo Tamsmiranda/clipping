@@ -1,0 +1,11 @@
+name: Clipping
+description: Media Clipping
+
+author: Thiago Miranda
+authorEmail: tamsmiranda@gmail.com
+authorUrl: http://h8si.com.br
+
+dependencies:
+  plugins:
+    - acl
+    - extensions

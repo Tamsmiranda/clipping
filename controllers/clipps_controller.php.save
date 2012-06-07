@@ -1,0 +1,488 @@
+﻿<?php
+class ClippsController extends ClippingAppController {
+
+	var $name = 'Clipps';
+	var $components = array('Email');
+
+	function index() {
+		$conditions = array();
+		if (!empty($this->params['named'])) {
+			if (isset($this->params['named']['publisher_type_id'])) {
+				$this->data['Clipps']['publisher_type_id'] = $this->params['named']['publisher_type_id'];
+			}
+		} else {
+			$this->data['Clipps']['publisher_type_id'] = '4e64fc9f-9c14-4d75-9f7b-1260737253ea';
+		}
+		if (!empty($this->data)) {
+			//debug($this->data);exit; 2011-09-05
+			if (!empty($this->data['Clipps']['start_date']) && !empty($this->data['Clipps']['end_date'])) {
+				$start_date = date($this->data['Clipps']['start_date']['year'].'-'.$this->data['Clipps']['start_date']['month'].'-'.$this->data['Clipps']['start_date']['day']);
+				$end_date = date($this->data['Clipps']['end_date']['year'].'-'.$this->data['Clipps']['end_date']['month'].'-'.$this->data['Clipps']['end_date']['day']);
+				$conditions[] = array('Clipp.publish_date BETWEEN ? AND ?' => array($start_date,$end_date));
+			}
+			if (!empty($this->data['Clipps']['title'])) { $conditions[] = array('title LIKE' => '%'.$this->data['Clipps']['title'].'%');}
+			if (!empty($this->data['Clipps']['evaluation_id'])) { $conditions[] = array('evaluation_id' => $this->data['Clipps']['evaluation_id']);}
+			if (!empty($this->data['Clipps']['status_id'])) { $conditions[] = array('status_id' => $this->data['Clipps']['status_id']);}
+			if (!empty($this->data['Clipps']['publisher_type_id'])) { $conditions[] = array('Clipp.publisher_type_id' => $this->data['Clipps']['publisher_type_id']);}
+			if (!empty($this->data['Clipps']['publisher_id'])) { $conditions[] = array('Clipp.publisher_id' => $this->data['Clipps']['publisher_id']);}
+			if (!empty($this->data['Clipps']['subject_id'])) { $conditions[] = array('subject_id' => $this->data['Clipps']['subject_id']);}
+		}
+		$this->Clipp->recursive = 2;
+		$this->paginate = array(
+			'Clipp' => array(
+				'order' =>array('Clipp.created'=>'desc','Clipp.publish_date'=>'desc'),
+				//'group' => array('Clipp.publisher_type_id','Clipp.publish_date'),
+				//'fields' => array('*','count(*) as total')
+			)
+		);
+		//$this->paginate = array('limit' => 1);
+		$conditions[] = array('Customer.user_id' => $this->Auth->user('id'));
+		$evaluations = $this->Clipp->Evaluation->find('list');
+		$statuses = $this->Clipp->Status->find('list');
+		//$customers = $this->Clipp->Customer->find('list');
+		$publisherTypes = $this->Clipp->PublisherType->find('list');
+		$publishers = $this->Clipp->Publisher->find('list', array('order' => array('name ASC')));
+		$sections = $this->Clipp->Section->find('list', array('order' => array('name ASC')));
+		$subjects = $this->Clipp->Subject->find('list', array('order' => array('name ASC')));
+		$createdBies = $this->Clipp->CreatedBy->find('list');
+		$modifiedBies = $this->Clipp->ModifiedBy->find('list');
+		$this->set(compact('evaluations', 'statuses', 'customers', 'publisherTypes', 'publishers', 'sections', 'subjects', 'createdBies', 'modifiedBies'));
+		$this->set('clipps', $this->paginate($conditions));
+	}
+	
+	function last_update() {
+		$conditions = array('limit'=>5);
+		$this->Clipp->recursive = 2;
+		return $this->Clipp->find('all',
+                  array('order'=>'Clipp.publish_date DESC',
+                        'limit'=>5,
+                        'recursive'=>0));
+	}
+	
+	function admin_index() {
+		$conditions = array();
+		if (!empty($this->params['named'])) {
+			if (isset($this->params['named']['publisher_type_id'])) {
+				$this->data['Clipps']['publisher_type_id'] = $this->params['named']['publisher_type_id'];
+			}
+		}
+		if (!empty($this->data)) {
+			//debug($this->data);exit; //2011-09-05
+			if (!empty($this->data['Clipps']['start_date']) && !empty($this->data['Clipps']['end_date'])) {
+				$start_date = date($this->data['Clipps']['start_date']['year'].'-'.$this->data['Clipps']['start_date']['month'].'-'.$this->data['Clipps']['start_date']['day']);
+				$end_date = date($this->data['Clipps']['end_date']['year'].'-'.$this->data['Clipps']['end_date']['month'].'-'.$this->data['Clipps']['end_date']['day']);
+				$conditions[] = array('Clipp.publish_date BETWEEN ? AND ?' => array($start_date,$end_date));
+			}
+			if (!empty($this->data['Clipps']['title'])) { $conditions[] = array('title LIKE' => '%'.$this->data['Clipps']['title'].'%');}
+			if (!empty($this->data['Clipps']['evaluation_id'])) { $conditions[] = array('evaluation_id' => $this->data['Clipps']['evaluation_id']);}
+			if (!empty($this->data['Clipps']['status_id'])) { $conditions[] = array('status_id' => $this->data['Clipps']['status_id']);}
+			if (!empty($this->data['Clipps']['publisher_type_id'])) { $conditions[] = array('Clipp.publisher_type_id' => $this->data['Clipps']['publisher_type_id']);}
+			if (!empty($this->data['Clipps']['publisher_id'])) { $conditions[] = array('Clipp.publisher_id' => $this->data['Clipps']['publisher_id']);}
+			if (!empty($this->data['Clipps']['subject_id'])) { $conditions[] = array('subject_id' => $this->data['Clipps']['subject_id']);}
+		}
+		$this->Clipp->recursive = 0;
+		$this->paginate = array(
+			'Clipp' => array(
+				'order' =>array('Clipp.created'=>'desc','Clipp.publish_date'=>'desc')
+			)
+		);
+		$evaluations = $this->Clipp->Evaluation->find('list');
+		$statuses = $this->Clipp->Status->find('list');
+		//$customers = $this->Clipp->Customer->find('list');
+		$publisherTypes = $this->Clipp->PublisherType->find('list');
+		$publishers = $this->Clipp->Publisher->find('list', array('order' => array('name ASC')));
+		$sections = $this->Clipp->Section->find('list');
+		$subjects = $this->Clipp->Subject->find('list', array('order' => array('name ASC')));
+		$createdBies = $this->Clipp->CreatedBy->find('list');
+		$modifiedBies = $this->Clipp->ModifiedBy->find('list');
+		$this->set(compact('evaluations', 'statuses', 'customers', 'publisherTypes', 'publishers', 'sections', 'subjects', 'createdBies', 'modifiedBies'));
+		$this->Clipp->recursive = 2;
+		$this->set('clipps', $this->paginate($conditions));
+	}
+
+	function view($id = null) {
+		if (!$id) {
+			$this->Session->setFlash(__('Invalid clipp', true));
+			$this->redirect(array('action' => 'index'));
+		}
+		$this->layout = 'clipp';
+		$this->set('clipp', $this->Clipp->read(null, $id));
+	}
+
+	function add() {
+		if (!empty($this->data)) {
+			$this->Clipp->create();
+			if ($this->Clipp->save($this->data)) {
+				$this->Session->setFlash(__('The clipp has been saved', true));
+				$this->redirect(array('action' => 'index'));
+			} else {
+				$this->Session->setFlash(__('The clipp could not be saved. Please, try again.', true));
+			}
+		}
+		$evaluations = $this->Clipp->Evaluation->find('list');
+		$statuses = $this->Clipp->Status->find('list');
+		$customers = $this->Clipp->Customer->find('list', array('order' => array('name ASC')));
+		$publisherTypes = $this->Clipp->PublisherType->find('list');
+		$publishers = $this->Clipp->Publisher->find('list', array('order' => array('name ASC')));
+		$sections = $this->Clipp->Section->find('list');
+		$subjects = $this->Clipp->Subject->find('list', array('order' => array('name ASC')));
+		$createdBies = $this->Clipp->CreatedBy->find('list');
+		$modifiedBies = $this->Clipp->ModifiedBy->find('list');
+		$this->set(compact('evaluations', 'statuses', 'customers', 'publisherTypes', 'publishers', 'sections', 'subjects', 'createdBies', 'modifiedBies'));
+	}
+
+	function edit($id = null) {
+		if (!$id && empty($this->data)) {
+			$this->Session->setFlash(__('Invalid clipp', true));
+			$this->redirect(array('action' => 'index'));
+		}
+		if (!empty($this->data)) {
+			if ($this->Clipp->save($this->data)) {
+				$this->Session->setFlash(__('The clipp has been saved', true));
+				$this->redirect(array('action' => 'index'));
+			} else {
+				$this->Session->setFlash(__('The clipp could not be saved. Please, try again.', true));
+			}
+		}
+		if (empty($this->data)) {
+			$this->data = $this->Clipp->read(null, $id);
+		}
+		$evaluations = $this->Clipp->Evaluation->find('list');
+		$statuses = $this->Clipp->Status->find('list');
+		$customers = $this->Clipp->Customer->find('list');
+		$publisherTypes = $this->Clipp->PublisherType->find('list');
+		$publishers = $this->Clipp->Publisher->find('list');
+		$sections = $this->Clipp->Section->find('list');
+		$subjects = $this->Clipp->Subject->find('list');
+		$createdBies = $this->Clipp->CreatedBy->find('list');
+		$modifiedBies = $this->Clipp->ModifiedBy->find('list');
+		$this->set(compact('evaluations', 'statuses', 'customers', 'publisherTypes', 'publishers', 'sections', 'subjects', 'createdBies', 'modifiedBies'));
+	}
+
+	function delete($id = null) {
+		if (!$id) {
+			$this->Session->setFlash(__('Invalid id for clipp', true));
+			$this->redirect(array('action'=>'index'));
+		}
+		if ($this->Clipp->delete($id)) {
+			$this->Session->setFlash(__('Clipp deleted', true));
+			$this->redirect(array('action'=>'index'));
+		}
+		$this->Session->setFlash(__('Clipp was not deleted', true));
+		$this->redirect(array('action' => 'index'));
+	}
+
+	function admin_view($id = null) {
+		if (!$id) {
+			$this->Session->setFlash(__('Invalid clipp', true));
+			$this->redirect(array('action' => 'index'));
+		}
+		//$clipp = $this->Clipp->read(null, $id)
+		$clipp = $this->Clipp->find('first',
+			array(
+				'conditions' => array(
+					'Clipp.id' => $id),
+				'recursive' => 2
+					)
+				);
+		$this->set(compact('clipp'));
+	}
+
+	function admin_add() {
+		if (!empty($this->data)) {
+			$this->Clipp->create();
+			if ($this->Clipp->save($this->data)) {
+				$this->Session->setFlash(__('The clipp has been saved', true));
+				$this->redirect(array('action' => 'view',$this->Clipp->getLastInsertId()));
+			} else {
+				$this->Session->setFlash(__('The clipp could not be saved. Please, try again.', true));
+			}
+		}
+		$default_publisher = null;
+		if (!empty($this->params['named'])) {
+			if (isset($this->params['named']['publisher_type_id'])) {
+				$this->data['Clipps']['publisher_type_id'] = $this->params['named']['publisher_type_id'];
+				$default_publisher = $this->data['Clipps']['publisher_type_id'];
+			}
+		}
+		$evaluations = $this->Clipp->Evaluation->find('list');
+		$statuses = $this->Clipp->Status->find('list');
+		$customers = $this->Clipp->Customer->find('list', array('order' => array('name ASC')));
+		$publisherTypes = $this->Clipp->PublisherType->find('list');
+		$publishers = array();//$this->Clipp->Publisher->find('list');
+		$sections = array();//$this->Clipp->Section->find('list');
+		$subjects = $this->Clipp->Subject->find('list', array('order' => array('name ASC')));
+		$createdBies = $this->Clipp->CreatedBy->find('list');
+		$modifiedBies = $this->Clipp->ModifiedBy->find('list');
+		$this->set(compact('evaluations', 'statuses', 'customers', 'publisherTypes', 'publishers', 'sections', 'subjects', 'createdBies', 'modifiedBies', 'default_publisher'));
+	}
+	
+	function admin_edit($id = null) {
+		if (!$id && empty($this->data)) {
+			$this->Session->setFlash(__('Invalid clipp', true));
+			$this->redirect(array('action' => 'index'));
+		}
+		if (!empty($this->data)) {
+			if ($this->data['Mode']['copy']) {
+				unset($this->data['Clipp']['id']);
+				$this->Clipp->create();
+			}
+			if ($this->Clipp->save($this->data)) {
+				if ($this->data['Mode']['copy']) {
+					$id = $this->Clipp->getInsertID();
+				}
+				$this->Session->setFlash(__('The clipp has been saved', true));
+				$this->redirect(array('action' => 'view', $id));
+			} else {
+				$this->Session->setFlash(__('The clipp could not be saved. Please, try again.', true));
+			}
+		}
+		if (empty($this->data)) {
+			$this->data = $this->Clipp->read(null, $id);
+		}
+		$copy = false;
+		if (!empty($this->params['named'])) {
+			if (isset($this->params['named']['copy'])) {
+				$copy = true;
+			}
+		}
+		$evaluations = $this->Clipp->Evaluation->find('list');
+		$statuses = $this->Clipp->Status->find('list');
+		$customers = $this->Clipp->Customer->find('list', array('order' => array('name ASC')));
+		$publisherTypes = $this->Clipp->PublisherType->find('list');
+		$publishers = $this->Clipp->Publisher->find('list', array('order' => array('name ASC')));
+		$sections = $this->Clipp->Section->find('list', array('order' => array('name ASC')));
+		$subjects = $this->Clipp->Subject->find('list', array('order' => array('name ASC')));
+		$createdBies = $this->Clipp->CreatedBy->find('list');
+		$modifiedBies = $this->Clipp->ModifiedBy->find('list');
+		$this->set(compact('evaluations', 'statuses', 'customers', 'publisherTypes', 'publishers', 'sections', 'subjects', 'createdBies', 'modifiedBies','copy'));
+	}
+
+	function admin_delete($id = null) {
+		if (!$id) {
+			$this->Session->setFlash(__('Invalid id for clipp', true));
+			$this->redirect(array('action'=>'index'));
+		}
+		if ($this->Clipp->delete($id)) {
+			$this->Session->setFlash(__('Clipp deleted', true));
+			$this->redirect(array('action'=>'index'));
+		}
+		$this->Session->setFlash(__('Clipp was not deleted', true));
+		$this->redirect(array('action' => 'index'));
+	}
+	
+	function beforeFilter() {
+        $this->Security->validatePost = false;
+		if (in_array($this->params['action'], array('view','index'))) {
+			if ($this->Auth->User('id')) {
+				$this->data['Login']['user_id'] = $this->Auth->User('id');
+				$this->Login->create();
+				$this->Login->save($this->data);
+			}
+		}
+		 parent::beforeFilter();
+	}
+	
+	function admin_send($id = null) {
+		if (!$id && !isset($this->data['Email'])) {
+			$this->Session->setFlash(__('Invalid id for clipp', true));
+			$this->redirect(array('action'=>'index'));
+		}
+		$clipp = $this->Clipp->find('first',
+			array(
+				'conditions' => array(
+					'Clipp.id' => $id),
+				'recursive' => 2
+					)
+				);
+		$this->set(compact('clipp'));
+		if ($id) {
+			if (!empty($this->data)) {
+				$this->Email->to = array($this->data['Email']['email']);
+				$this->Email->bcc = array('tamsmiranda@gmail.com');
+				$this->Email->subject = $clipp['Clipp']['title'];
+				$this->Email->replyTo = 'contato@rttvclipping.com.br;
+				$this->Email->from = 'Media Clipping <contato@rttvclipping.com.br>';
+				$this->Email->template = 'clipp'; // note no '.ctp'
+				//Send as 'html', 'text' or 'both' (default is 'text')
+				$this->Email->sendAs = 'both'; // because we like to send pretty mail
+				/*$this->Email->smtpOptions = array(
+					'port'=>'465',
+					'timeout'=>'30',
+					'host' => 'ssl://smtp.gmail.com',
+					'username'=>'tamsmiranda@gmail.com',
+					'password'=>'',
+				);*/
+				$this->Email->smtpOptions = array(
+					'port'=>'25',
+					'timeout'=>'60',
+					'host' => 'smtp.rttvclipping.com.br',
+					'username'=>'contato@rttvclipping.com.br',
+					'password'=>'rttv123contato',
+				);
+				$this->Email->delivery = 'smtp';
+				
+				//$this->Email->delivery = 'debug';
+				if ( $this->Email->send() ) {
+				   $this->Session->setFlash(__('Mail send sucessfull',true));
+			   } else {
+				   $this->Session->setFlash(__('Mail not send',true).'<br />'.$this->Email->smtpError);
+			   }
+			}
+		} else {
+			if (!empty($this->data)) {
+				$msg = '';
+				$clipp = array();
+				foreach ($this->data['Email'] as $clipp_id=> $value) {
+					if ($value && $clipp_id!='to') {
+						$clipp[] = $this->Clipp->find('first',
+							array(
+								'conditions' => array(
+									'Clipp.id' => $clipp_id),
+								'recursive' => 2
+									)
+								);
+				   }
+			    }
+				$this->set(compact('clipp'));
+					$this->Email->to = array($this->data['Email']['to']);
+					$this->Email->bcc = array('tamsmiranda@gmail.com');
+					$this->Email->subject = 'Novos Clipps'; //$clipp['Clipp']['title'];
+					$this->Email->replyTo = 'tamsmiranda@gmail.com';
+					$this->Email->from = 'Media Clipping <thiago@h8si.com.br>';
+					$this->Email->template = 'clipp'; // note no '.ctp'
+					//Send as 'html', 'text' or 'both' (default is 'text')
+					$this->Email->sendAs = 'both'; // because we like to send pretty mail
+					/*$this->Email->smtpOptions = array(
+						'port'=>'465',
+						'timeout'=>'30',
+						'host' => 'ssl://smtp.gmail.com',
+						'username'=>'tamsmiranda@gmail.com',
+						'password'=>'',
+					);*/
+					$this->Email->smtpOptions = array(
+						'port'=>'587',
+						'timeout'=>'60',
+						'host' => 'smtp.h8si.com.br',
+						'username'=>'thiago@h8si.com.br',
+						'password'=>'Melancia000',
+					);
+					$this->Email->delivery = 'smtp';
+					
+					//$this->Email->delivery = 'debug';
+					if ( $this->Email->send() ) {
+					   //$this->Session->setFlash(__('Mail send sucessfull',true));
+					   $msg .= '<b>' . $clipp['Clipp']['title'] . '</b> : ' . __('Mail send sucessfull',true) . '<br />';
+				   } else {
+					   //$this->Session->setFlash(__('Mail not send',true).'<br />'.$this->Email->smtpError);
+					   $msg .= '<b>' .$clipp['Clipp']['title'] . '</b> : ' . __('Mail not send',true).'<br />'.$this->Email->smtpError . '<br />';
+				   }
+				$this->Session->setFlash($msg);
+				$this->redirect(array('action'=>'index'));
+			}
+		}
+	}
+
+	
+	function send($id = null) {
+		$this->autoRender = false;
+		$this->layout = 'clipp';
+		if (!$id && !isset($this->data['Email'])) {
+			$this->Session->setFlash(__('Invalid id for clipp', true));
+			$this->redirect(array('action'=>'index'));
+		}
+		$clipp = $this->Clipp->find('first',
+			array(
+				'conditions' => array(
+					'Clipp.id' => $id),
+				'recursive' => 2
+					)
+				);
+		$this->set(compact('clipp'));
+		if ($id) {
+			if (!empty($this->data)) {
+				$this->Email->to = array($this->data['Email']['email']);
+				$this->Email->bcc = array('tamsmiranda@gmail.com');
+				$this->Email->subject = $clipp['Clipp']['title'];
+				$this->Email->replyTo = 'tamsmiranda@gmail.com';
+				$this->Email->from = 'Media Clipping <thiago@h8si.com.br>';
+				$this->Email->template = 'clipp'; // note no '.ctp'
+				//Send as 'html', 'text' or 'both' (default is 'text')
+				$this->Email->sendAs = 'html'; // because we like to send pretty mail
+				/*$this->Email->smtpOptions = array(
+					'port'=>'465',
+					'timeout'=>'30',
+					'host' => 'ssl://smtp.gmail.com',
+					'username'=>'tamsmiranda@gmail.com',
+					'password'=>'',
+				);*/
+				$this->Email->smtpOptions = array(
+					'port'=>'587',
+					'timeout'=>'60',
+					'host' => 'smtp.h8si.com.br',
+					'username'=>'thiago@h8si.com.br',
+					'password'=>'Melancia000',
+				);
+				$this->Email->delivery = 'smtp';
+				
+				//$this->Email->delivery = 'debug';
+				if ( $this->Email->send() ) {
+				   $this->Session->setFlash(__('Mail send sucessfull',true));
+			   } else {
+				   $this->Session->setFlash(__('Mail not send',true).'<br />'.$this->Email->smtpError);
+			   }
+			}
+		} else {
+			if (!empty($this->data)) {
+				$msg = '';
+				foreach ($this->data['Email'] as $clipp_id=> $value) {
+					if ($value && $clipp_id!='to') {
+						$clipp = $this->Clipp->find('first',
+							array(
+								'conditions' => array(
+									'Clipp.id' => $clipp_id),
+								'recursive' => 2
+									)
+								);
+						$this->set(compact('clipp'));
+						$this->Email->to = array($this->data['Email']['to']);
+						$this->Email->bcc = array('tamsmiranda@gmail.com');
+						$this->Email->subject = $clipp['Clipp']['title'];
+						$this->Email->replyTo = 'tamsmiranda@gmail.com';
+						$this->Email->from = 'Media Clipping <thiago@h8si.com.br>';
+						$this->Email->template = 'clipp'; // note no '.ctp'
+						//Send as 'html', 'text' or 'both' (default is 'text')
+						$this->Email->sendAs = 'html'; // because we like to send pretty mail
+						/*$this->Email->smtpOptions = array(
+							'port'=>'465',
+							'timeout'=>'30',
+							'host' => 'ssl://smtp.gmail.com',
+							'username'=>'tamsmiranda@gmail.com',
+							'password'=>'',
+						);*/
+						$this->Email->smtpOptions = array(
+							'port'=>'587',
+							'timeout'=>'60',
+							'host' => 'smtp.h8si.com.br',
+							'username'=>'thiago@h8si.com.br',
+							'password'=>'Melancia000',
+						);
+						$this->Email->delivery = 'smtp';
+						
+						//$this->Email->delivery = 'debug';
+						if ( $this->Email->send() ) {
+						   //$this->Session->setFlash(__('Mail send sucessfull',true));
+						   $msg .= '<b>' . $clipp['Clipp']['title'] . '</b> : ' . __('Mail send sucessfull',true) . '<br />';
+					   } else {
+						   //$this->Session->setFlash(__('Mail not send',true).'<br />'.$this->Email->smtpError);
+						   $msg .= '<b>' .$clipp['Clipp']['title'] . '</b> : ' . __('Mail not send',true).'<br />'.$this->Email->smtpError . '<br />';
+					   }
+				   }
+			    }
+				$this->Session->setFlash($msg);
+			}
+		}
+		$this->redirect(array('action'=>'view',$id));
+	}
+}
+?>
