@@ -627,11 +627,15 @@ class ClippsController extends ClippingAppController {
 	function admin_add() {
 		if (!empty($this->data)) {
 			$this->Clipp->create();
-			if ($this->Clipp->save($this->data)) {
-				$this->Session->setFlash(__('The clipp has been saved', true));
-				$this->redirect(array('action' => 'view',$this->Clipp->getLastInsertId()));
-			} else {
-				$this->Session->setFlash(__('The clipp could not be saved. Please, try again.', true));
+			$customers = $this->data['Clipp']['customer_id'];
+			foreach ($customers as $customer) {
+				$this->data['Clipp']['customer_id'] = $customer;
+				if ($this->Clipp->save($this->data)) {
+					$this->Session->setFlash(__('The clipp has been saved', true));
+					$this->redirect(array('action' => 'view',$this->Clipp->getLastInsertId()));
+				} else {
+					$this->Session->setFlash(__('The clipp could not be saved. Please, try again.', true));
+				}
 			}
 		}
 		$default_publisher = null;
