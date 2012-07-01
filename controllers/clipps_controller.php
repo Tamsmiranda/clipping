@@ -627,15 +627,12 @@ class ClippsController extends ClippingAppController {
 	function admin_add() {
 		if (!empty($this->data)) {
 			$this->Clipp->create();
-			$customers = $this->data['Clipp']['customer_id'];
-			foreach ($customers as $customer) {
-				$this->data['Clipp']['customer_id'] = $customer;
-				if ($this->Clipp->save($this->data)) {
-					$this->Session->setFlash(__('The clipp has been saved', true));
-					$this->redirect(array('action' => 'view',$this->Clipp->getLastInsertId()));
-				} else {
-					$this->Session->setFlash(__('The clipp could not be saved. Please, try again.', true));
-				}
+			$this->data['Clipp']['customer_id'] = $customer;
+			if ($this->Clipp->save($this->data)) {
+				$this->Session->setFlash(__('The clipp has been saved', true));
+				$this->redirect(array('action' => 'view',$this->Clipp->getLastInsertId()));
+			} else {
+				$this->Session->setFlash(__('The clipp could not be saved. Please, try again.', true));
 			}
 		}
 		$default_publisher = null;
@@ -663,19 +660,20 @@ class ClippsController extends ClippingAppController {
 			$this->redirect(array('action' => 'index'));
 		}
 		if (!empty($this->data)) {
-			if ($this->data['Mode']['copy']) {
-				unset($this->data['Clipp']['id']);
-				$this->Clipp->create();
-			}
-			if ($this->Clipp->save($this->data)) {
+			$customers = $this->data['Clipp']['customer_id'];
+			foreach ($customers as $customer) {
 				if ($this->data['Mode']['copy']) {
-					$id = $this->Clipp->getInsertID();
+					unset($this->data['Clipp']['id']);
+					$this->Clipp->create();
 				}
-				$this->Session->setFlash(__('The clipp has been saved', true));
-				$this->redirect(array('action' => 'view', $id));
-			} else {
-				$this->Session->setFlash(__('The clipp could not be saved. Please, try again.', true));
+				$this->data['Clipp']['customer_id'] = $customer;
+				if ($this->Clipp->save($this->data)) {
+					$this->Session->setFlash(__('The clipp has been saved', true));
+				} else {
+					$this->Session->setFlash(__('The clipp could not be saved. Please, try again.', true));
+				}
 			}
+			$this->redirect(array('action' => 'index'));
 		}
 		if (empty($this->data)) {
 			$this->data = $this->Clipp->read(null, $id);
