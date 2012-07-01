@@ -10,6 +10,8 @@
 		// Tv
 			$('#obs').show('slow');
 			$('#obs_lbl').text('Duração');
+			$('#divTiragem').hide('slow');
+			$('#divColumn').hide('slow');
 		} else {
 			$('#obs').hide('slow');
 			$('#divTiragem').hide('slow');
