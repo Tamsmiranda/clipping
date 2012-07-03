@@ -661,17 +661,24 @@ class ClippsController extends ClippingAppController {
 		}
 		if (!empty($this->data)) {
 			$customers = $this->data['Clipp']['customer_id'];
-			foreach ($customers as $customer) {
-				if ($this->data['Mode']['copy']) {
-					unset($this->data['Clipp']['id']);
-					$this->Clipp->create();
+			if ($this->data['Mode']['copy']) {
+				debug($this->data);
+				exit;
+				foreach ($customers as $customer) {
+						unset($this->data['Clipp']['id']);
+						$this->Clipp->create();
+					$this->data['Clipp']['customer_id'] = $customer;
+					if ($this->Clipp->save($this->data)) {
+						$this->Session->setFlash(__('The clipp has been saved', true));
+					} else {
+						$this->Session->setFlash(__('The clipp could not be saved. Please, try again.', true));
+					}
 				}
-				$this->data['Clipp']['customer_id'] = $customer;
-				if ($this->Clipp->save($this->data)) {
-					$this->Session->setFlash(__('The clipp has been saved', true));
-				} else {
-					$this->Session->setFlash(__('The clipp could not be saved. Please, try again.', true));
-				}
+			} elseif ($this->Clipp->save($this->data)) {
+				$this->Session->setFlash(__('The clipp has been saved', true));
+				$this->redirect(array('action' => 'view',$this->Clipp->getLastInsertId()));
+			} else {
+				$this->Session->setFlash(__('The clipp could not be saved. Please, try again.', true));
 			}
 			$this->redirect(array('action' => 'index'));
 		}

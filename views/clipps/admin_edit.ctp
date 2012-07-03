@@ -23,7 +23,11 @@
 					echo $this->Form->input('observation');
 					echo $this->Form->input('evaluation_id');
 					//echo $this->Form->input('status_id');
-					echo $this->Form->input('customer_id',array('type'=>'select','multiple'=>true));
+					if ($copy) { 
+						echo $this->Form->input('customer_id',array('type'=>'select','multiple'=>true));
+					} else {
+						echo $this->Form->input('customer_id');
+					}
 					echo $this->Form->input('subject_id');
 				?>
 				</div>
