@@ -664,17 +664,11 @@ class ClippsController extends ClippingAppController {
 			$storages = $this->Clipp->Storage->find('all', array('conditions' => array('Storage.clipp_id' => $id)));
 			if ($this->data['Mode']['copy']) {
 				foreach ($customers as $customer) {
-						unset($this->data['Clipp']['id']);
-						//unset($this->data['Storage']['id']);
-						//unset($this->data['Storage']['clipp_id']);
-									
+					unset($this->data['Clipp']['id']);
 					$this->Clipp->create($this->data);
 					$this->data['Clipp']['customer_id'] = $customer;
-					//debug($this->data);
 					if ($this->Clipp->save($this->data)) {
 						$clipp_id  = $this->Clipp->getLastInsertId();
-						//$this->data['Storage']['clipp_id'] = $clipp_id;
-						// $this->data['Storage']['name'] = 'Teste asdjasdhkasd';
 						foreach ( $storages as $storage ) {
 							unset($storage['Storage']['id']);
 							$this->Clipp->Storage->create($storage);
@@ -687,7 +681,6 @@ class ClippsController extends ClippingAppController {
 						$this->Session->setFlash(__('The clipp could not be saved. Please, try again.', true));
 					}
 				}
-				//exit;
 			} elseif ($this->Clipp->save($this->data)) {
 				$this->Session->setFlash(__('The clipp has been saved', true));
 				$this->redirect(array('action' => 'view',$this->Clipp->getLastInsertId()));
@@ -697,10 +690,8 @@ class ClippsController extends ClippingAppController {
 			$this->redirect(array('action' => 'index'));
 		}
 		if (empty($this->data)) {
-			//$this->data = $this->Clipp->read(null, $id);
 			$this->data = $this->Clipp->find('first', array('conditions' => array('Clipp.id' => $id)));
 		}
-		//debug($this->data);exit;
 		$copy = false;
 		if (!empty($this->params['named'])) {
 			if (isset($this->params['named']['copy'])) {
