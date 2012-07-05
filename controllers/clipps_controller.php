@@ -627,7 +627,6 @@ class ClippsController extends ClippingAppController {
 	function admin_add() {
 		if (!empty($this->data)) {
 			$this->Clipp->create();
-			$this->data['Clipp']['customer_id'] = $customer;
 			if ($this->Clipp->save($this->data)) {
 				$this->Session->setFlash(__('The clipp has been saved', true));
 				$this->redirect(array('action' => 'view',$this->Clipp->getLastInsertId()));
