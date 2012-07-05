@@ -662,6 +662,7 @@ class ClippsController extends ClippingAppController {
 		if (!empty($this->data)) {
 			$customers = $this->data['Clipp']['customer_id'];
 			$storages = $this->Clipp->Storage->find('all', array('conditions' => array('Storage.clipp_id' => $id)));
+			$links = $this->Clipp->ClippLink->find('all', array('conditions' => array('ClippLink.clipp_id' => $id)));
 			if ($this->data['Mode']['copy']) {
 				foreach ($customers as $customer) {
 					unset($this->data['Clipp']['id']);
@@ -674,6 +675,14 @@ class ClippsController extends ClippingAppController {
 							$this->Clipp->Storage->create($storage);
 							$storage['Storage']['clipp_id'] = $clipp_id;
 							if ($this->Clipp->Storage->save($storage)) {
+								$this->Session->setFlash(__('The clipp has been saved', true));
+							}
+						}
+						foreach ( $links as $link ) {
+							unset($link['ClippLink']['id']);
+							$this->Clipp->ClippLink->create($link);
+							$link['ClippLink']['clipp_id'] = $clipp_id;
+							if ($this->Clipp->ClippLink->save($link)) {
 								$this->Session->setFlash(__('The clipp has been saved', true));
 							}
 						}
