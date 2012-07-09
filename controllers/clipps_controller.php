@@ -320,7 +320,7 @@ class ClippsController extends ClippingAppController {
 						}
 					}
 					echo "<title><![CDATA[" . preg_replace('/"/',"'",$clipp['Clipp']['title']) . "]]></title>\n" .
-						"<publisher>" . $clipp['Publisher']['name'] . "</publisher>\n" .
+						"<publisher><![CDATA[" . $clipp['Publisher']['name'] . "]]</publisher>\n" .
 						"<publish_date>" . date('d/m/Y',strtotime($clipp['Clipp']['publish_date'])) . "</publish_date>\n" .
 						"<section><![CDATA[" . $clipp['Section']['name'] . "]]></section>\n" .
 						"<publisher_type>" . $clipp['PublisherType']['name'] . "</publisher_type>\n"  .
@@ -331,7 +331,7 @@ class ClippsController extends ClippingAppController {
 						"<cm>" . $cm . "</cm>\n" .
 						"<cm2>" . $cm2 . "</cm2>\n" .
 						"<subject>" . $clipp['Subject']['name'] . "</subject>\n" .
-						"<customer>" . $clipp['Customer']['name'] . "</customer>\n".
+						"<customer><![CDATA[" . $clipp['Customer']['name'] . "]]</customer>\n".
 						"<external_link>" . "http://extranet.rttvclipping.com.br/clipping/clipps/view/" . $clipp['Clipp']['id'] . "</external_link>\n";
 						echo "<links>\n";
 						$links = "";
